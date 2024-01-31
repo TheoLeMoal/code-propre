@@ -1,32 +1,46 @@
 package ex3;
 
+import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * 
+ */
 public class Zoo {
 
 	private String nom;
-	private List<String> types;
-	private List<String> noms;
-	private List<String> comportements;
+	private List<Animal> animaux = new ArrayList<>();
 	
+	/**
+	 * Constructeur du Zoo
+	 * @param nom
+	 */
 	public Zoo(String nom){
 		this.nom = nom;
 	}
 	
-	public void addAnimal(String nomAnimal, String typeAnimal, String comportement){
-		types.add(typeAnimal);
-		noms.add(nomAnimal);
-		comportements.add(comportement);
+	/**
+	 * @param animal
+	 */
+	public void addAnimal(Animal animal){
+		animaux.add(animal);
 	}
 	
+	/**
+	 * Afficher la liste des animaux présent dans la zoo
+	 */
 	public void afficherListeAnimaux(){
-		for (int i=0; i<types.size(); i++) {
-			System.out.println(noms.get(i)+" "+types.get(i)+" "+comportements.get(i));
+		for (Animal animal : animaux) {
+			System.out.println(animal);
 		}
 	}
 	
+	/**
+	 * @return
+	 */
 	public int taille() {
-		return types.size();
+		return animaux.size();
 	}
 
 	/** Getter for nom
